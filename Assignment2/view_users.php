@@ -15,17 +15,17 @@ $display = 10;
 $q = "SELECT username AS handle, CONCAT(first_name,' ',last_name) AS name FROM users";
 $r = @mysqli_query($dbc, $q); // Run the query.
 // Display the number of users
-$num = @mysqli_num_rows($r);
+$num = mysqli_num_rows($r);
 if ($num > 0)
 {
-	echo "<p>There are currently $num users in the database</p>\n";
+	echo "<p>There are currently $num users in the database.</p>\n";
 
 	// Table header:
 	echo '<table class="active" width="60%">
 	<thead>
 	<tr>
 		<th align="left"><strong>User Handle</strong></th>
-		<th align="left"><strong>User\'s Name</strong></th>
+		<th align="left"><strong>See Users Posts</strong></th>
 	</tr>
 	</thead>
 	<tbody>
@@ -37,7 +37,7 @@ if ($num > 0)
 		$bg = ($bg=='#eeeeee' ? '#ffffff' : '#eeeeee');
 			echo '<tr bgcolor="' . $bg . '">
 			<td align="left">' . $row['handle'] . '</td>
-			<td align="left">' . $row['name'] . '</td>
+			<td align="left"><a href="view_user_posts.php?id='. $row['handle'] . '"><strong>View User\'s Posts</strong></a></td>
 		</tr>
 		';
 	} // End of WHILE loop.

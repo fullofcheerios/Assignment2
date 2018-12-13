@@ -3,7 +3,7 @@
 // This function outputs theoretical HTML
 // for adding ads to a Web page.
 function create_ad() {
-  echo '<div class="alert alert-info" role="alert"><p>This is Assignment 1! This is Assignment 1! This is Assignment 1! This is an Assignment 1!</p></div>';
+  echo '<div class="alert alert-info" role="alert"><p>This is Assignment 2! This is Assignment 2! This is Assignment 2! This is an Assignment 2!</p></div>';
 } // End of the function definition.
 
 $page_title = 'Welcome to this Site!';
